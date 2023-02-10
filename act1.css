@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    display: flex;
+    min-width: 100%;
+    min-height: 100%;
+}
+.up {
+    display: grid;
+    place-items: center;
+    margin-top: -10rem;
+    animation: pop 0.5s ease forwards, 
+               moving 3s 2s linear infinite forwards; 
+}
+.dirt {
+    position: absolute;
+    bottom: 1px;
+}
+.eol {
+    position: absolute;
+    left: -400px;
+    bottom: 300px;
+    width: 450px;
+    animation: fairy 6s linear infinite alternate;
+}
+/* keyframes */
+
+@keyframes pop {
+    0%{
+        opacity: 0;
+        transform: translateY(-10rem);
+    }
+    70%{
+        transform: translateY(12rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(11rem);
+    }
+}
+@keyframes moving {
+    0%{
+        margin-top: -10rem;
+    }
+    50%{
+        transform: translateY(12rem);
+    }
+    100%{
+        transform: translateY(11rem);
+    }
+}
+@keyframes fairy {
+    0%{
+        left: -400px;
+    }
+    25%{
+        transform: translateX(400px) translateY(100px);
+    }
+    50%{
+        transform: translateX(1000px) translateY(200px); 
+    }
+    75%{
+        transform: translateX(1700px) translateY(100px);
+    }
+    100%{
+        transform: translateX(2500px) translateY(200px);
+    }
+}
